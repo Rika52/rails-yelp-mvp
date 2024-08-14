@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @restaurant %>
-
-<div>
-  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
-  <%= link_to "Back to restaurants", restaurants_path %>
-
-  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
-</div>
+  <%= render "restaurant", restaurant: @restaurant %>
+  <br>
+  <%= link_to "Back to all restaurants", restaurants_path %>
+  <br>
+  <%= link_to "Delete Resto", restaurant_path(@restaurant), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <br>
+  <%= link_to "Write review", new_restaurant_review_path(@restaurant)%>
